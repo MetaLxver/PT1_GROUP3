@@ -1,0 +1,683 @@
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f5;
+    color: #2d3748;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Navigation */
+.main-header {
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    border-bottom: 3px solid #4a7c59;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo on the left */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4a7c59;
+    letter-spacing: -0.3px;
+}
+
+/* Unique Pill Navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    background: #f0f5f1;
+    padding: 6px 8px;
+    border-radius: 30px;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #35583f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    background-color: #dceada;
+    color: #1b3d25;
+}
+
+.nav-links a.active {
+    background-color: #4a7c59;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(74, 124, 89, 0.3);
+}
+
+/* Home Page Section */
+.home {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #eaf2eb;
+    flex: 1;
+}
+
+/* Hero Banner Container */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    flex: 1 0 auto;
+    min-height: calc(100vh - 70px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Background Slideshow Animation */
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeSlider 15s infinite ease-in-out;
+}
+
+/* Add your background image filenames here */
+.slide1 {
+    background-image: url('images/vecteezy_green-sprout-on-circuit-board-technology-and-growth-concept_70870763.jpg');
+    animation-delay: 0s;
+}
+
+.slide2 {
+    background-image: url('images/2.jpeg');
+    animation-delay: 5s;
+}
+
+.slide3 {
+    background-image: url('images/transforming-higher-education-with-digital-technologies.jpg');
+    animation-delay: 10s;
+}
+
+/* Keyframes for Automatic Fading & Zoom Effect */
+@keyframes fadeSlider {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    10% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 1;
+    }
+    43% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Dark Gradient Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 100%);
+    z-index: 1;
+}
+
+/* Text Content Styling */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-left: 10%;
+    max-width: 600px;
+    color: #ffffff;
+}
+
+.sub-title {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #e2e8f0;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 15px 0;
+    color: #ffffff;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #cbd5e1;
+}
+
+/* Soft Green Action Button */
+/* Button Container */
+.hero-btn-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Circular Pill Button Design */
+.hero-btn.primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4a7c59;
+    color: #ffffff;
+    padding: 16px 36px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(74, 124, 89, 0.4);
+    transition: all 0.3s ease;
+}
+
+.hero-btn.primary:hover {
+    background-color: #386144;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(74, 124, 89, 0.6);
+}
+
+/* List of About Page Section */
+/* About Page Main Container */
+.about-container {
+    flex: 1;
+    padding: 60px 10%;
+}
+
+.about-hero h1 {
+    color: #4a7c59;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.about-pillars h2,
+.about-tools h2 {
+    color: #4a7c59;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.pillar-card {
+    background-color: #ffffff;
+    border-top: 4px solid #4a7c59;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.pillar-card h3 {
+    color: #4a7c59;
+}
+
+.about-goal {
+    background-color: #213a29;
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.about-goal h2 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.about-goal p {
+    color: #c0d8c6;
+}
+
+.about-btn-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.about-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4a7c59;
+    color: #ffffff;
+    padding: 16px 40px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 15px rgba(74, 124, 89, 0.4);
+    transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+    background-color: #35583f;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(74, 124, 89, 0.6);
+}
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.pillar-card {
+    background-color: #ffffff;
+    border: 1px solid #d8e6db;
+    border-top: 5px solid #4a7c59;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for emphasis */
+.pillar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(74, 124, 89, 0.2);
+    border-top-color: #213a29;
+}
+
+.pillar-card .icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.pillar-card h3 {
+    color: #2d5a3f;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.pillar-card p {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Tags Section */
+.about-tools {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.tools-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.tag {
+    background-color: #eaf2eb;
+    color: #35583f;
+    border: 1px solid #4a7c59;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Objective Banner */
+.about-goal {
+    background-color: #35583f;
+    color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.about-goal h2 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.about-goal p {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto;
+    color: #e2f0d9;
+}
+
+.btn-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.about-btn {
+    display: inline-block;
+    background-color: #2d5a3f;
+    color: #ffffff;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+    background-color: #1e3d2b;
+    transform: translateY(-2px);
+}
+
+/*LESSONS CONTENT PAGE (ACCORDION & MEDIA EMBEDS)*/
+.content {
+    background-color: #ffffff;
+    padding: 60px 15%;
+    flex: 1;
+}
+
+.content h2 {
+    text-align: center;
+    color: #35583f;
+    font-size: 32px;
+}
+
+.lesson-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Collapsible Lesson Cards */
+details.lesson-card {
+    background-color: #f4f8f5;
+    border-left: 5px solid #4a7c59;
+    margin-top: 25px;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+details.lesson-card summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+/* Hide default browser marker in Chrome, Safari, Edge */
+details.lesson-card summary::-webkit-details-marker {
+    display: none;
+}
+
+details.lesson-card summary h3,
+details.lesson-card summary h4 {
+    color: #2d5a3f;
+    font-size: 22px;
+    margin: 0;
+}
+
+details.lesson-card .arrow {
+    color: #4a7c59;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate custom arrow when card is opened */
+details[open] .arrow {
+    transform: rotate(180deg);
+}
+
+/* Inside Card Content Formatting */
+.card-body {
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid #e2efe5;
+    background-color: #ffffff;
+}
+
+.card-body h4 {
+    color: #35583f;
+    font-size: 18px;
+    margin: 15px 0 8px 0;
+}
+
+.card-body p {
+    font-size: 15px;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Fixed & Clean Media Container */
+/* Existing Global Rules */
+.media-container {
+    width: 100%;
+    height: 650px;
+    min-height: 600px;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.media-container embed,
+.media-container iframe,
+.media-container object {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Specific Override for Vertical Phone Recordings */
+.media-container.video-container video {
+    background-color: #000000;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Container specifically for videos */
+.video-container {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Ensure the video element fits the card and leaves room for standard controls */
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.activity-btn {
+    display: inline-block;
+    background-color: #4a7c59;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 12px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.activity-btn:hover {
+    background-color: #35583f;
+    transform: translateY(-1px);
+}
+
+/* Shared Footer */
+.main-footer {
+    background-color: #213a29;
+    color: #e2efe5;
+    padding-top: 45px;
+    margin-top: 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px 35px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.footer-logo img {
+    height: 35px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.footer-logo h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.footer-brand p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #a8caaf;
+}
+
+.footer-links h4,
+.footer-info h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #4a7c59;
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #c4dec9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    padding-left: 6px;
+}
+
+.info-badge {
+    background: #4a7c59;
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    font-size: 0.88rem;
+    color: #a8caaf;
+    margin: 4px 0;
+}
+
+.footer-bottom {
+    background-color: #172a1d;
+    text-align: center;
+    padding: 16px 20px;
+    font-size: 0.82rem;
+    color: #8bb393;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
